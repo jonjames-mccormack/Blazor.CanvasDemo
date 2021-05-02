@@ -1,0 +1,807 @@
+[
+  {
+    "id": "b45ab2b2-517e-7d92-f76f-39fb25f28c40",
+    "planGroupId": "76d68f91-cb68-4cda-8843-044e8af76834",
+    "planGroupName": "Bangalore",
+    "planRowId": null,
+    "planRowName": null,
+    "processId": "60cc89eb-1e34-4db0-9fdc-2f3f4f3161f4",
+    "processName": "Sew",
+    "plannedPreProductionDate": "2021-02-15T00:00:00",
+    "firstProductionDate": "2021-03-22T00:00:00",
+    "lastProductionDate": "2021-03-27T00:00:00",
+    "expectedDeliveryDate": "2021-04-02T00:00:00",
+    "deliveryDate": "2021-04-01T00:00:00",
+    "workContentValue": 15,
+    "quantity": 12500,
+    "minutes": 187500,
+    "orderName": "PO-120061",
+    "customer": "H&M",
+    "orderReceivedDate": "2021-01-05T00:00:00",
+    "lineReference": "Line 7",
+    "style": "Style001",
+    "styleOption": "Option 1",
+    "styleColours": ["White"],
+    "productionTemplate": "Default",
+    "orderType": "Quick Response",
+    "orderTypeColour": "#486B34",
+    "orderStatus": "Booking",
+    "orderStatusColour": "#20FF20",
+    "destination": "Port",
+    "stripSchedule": [
+      {
+        "plannedDate": "2021-03-22T00:00:00",
+        "quantity": 2500,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-03-23T00:00:00",
+        "quantity": 2500,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-03-24T00:00:00",
+        "quantity": 2500,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-03-25T00:00:00",
+        "quantity": 2500,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-03-26T00:00:00",
+        "quantity": 2500,
+        "workingTime": 0
+      }
+    ]
+  },
+  {
+    "id": "49c45cfd-7876-2989-a83a-39fb25f61c28",
+    "planGroupId": "76d68f91-cb68-4cda-8843-044e8af76834",
+    "planGroupName": "Bangalore",
+    "planRowId": null,
+    "planRowName": null,
+    "processId": "60cc89eb-1e34-4db0-9fdc-2f3f4f3161f4",
+    "processName": "Sew",
+    "plannedPreProductionDate": "2021-03-08T00:00:00",
+    "firstProductionDate": "2021-03-22T00:00:00",
+    "lastProductionDate": "2021-03-27T00:00:00",
+    "expectedDeliveryDate": "2021-04-02T00:00:00",
+    "deliveryDate": "2021-04-22T00:00:00",
+    "workContentValue": 15,
+    "quantity": 14500,
+    "minutes": 217500,
+    "orderName": "PO-120061",
+    "customer": "H&M",
+    "orderReceivedDate": "2021-01-05T00:00:00",
+    "lineReference": "Line 8",
+    "style": "Style001",
+    "styleOption": "Option 1",
+    "styleColours": ["White"],
+    "productionTemplate": "Default",
+    "orderType": "Short Lead Time",
+    "orderTypeColour": "#3F9062",
+    "orderStatus": "Forecast",
+    "orderStatusColour": "#AD7521",
+    "destination": "Port",
+    "stripSchedule": [
+      {
+        "plannedDate": "2021-03-22T00:00:00",
+        "quantity": 2900,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-03-24T00:00:00",
+        "quantity": 2900,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-03-23T00:00:00",
+        "quantity": 2900,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-03-26T00:00:00",
+        "quantity": 2900,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-03-25T00:00:00",
+        "quantity": 2900,
+        "workingTime": 0
+      }
+    ]
+  },
+  {
+    "id": "f39c6b53-a05d-655e-421c-39fb28fe365b",
+    "planGroupId": "76d68f91-cb68-4cda-8843-044e8af76834",
+    "planGroupName": "Bangalore",
+    "planRowId": "15927ba5-160d-7db1-77aa-0157bd2ea72f",
+    "planRowName": "BG Line 01",
+    "processId": "60cc89eb-1e34-4db0-9fdc-2f3f4f3161f4",
+    "processName": "Sew",
+    "plannedPreProductionDate": "2021-03-21T00:00:00",
+    "firstProductionDate": "2021-03-29T00:00:00",
+    "lastProductionDate": "2021-04-14T00:00:00",
+    "expectedDeliveryDate": "2021-04-20T00:00:00",
+    "deliveryDate": "2021-05-05T00:00:00",
+    "workContentValue": 15,
+    "quantity": 27999,
+    "minutes": 419985,
+    "orderName": "PO-120063",
+    "customer": "Walmart",
+    "orderReceivedDate": "2021-01-07T00:00:00",
+    "lineReference": "Line 11",
+    "style": "Style001",
+    "styleOption": "Option 1",
+    "styleColours": ["White"],
+    "productionTemplate": "Default",
+    "orderType": "Quick Response",
+    "orderTypeColour": "#486B34",
+    "orderStatus": "Confirmed",
+    "orderStatusColour": "#808080",
+    "destination": "Port",
+    "stripSchedule": [
+      {
+        "plannedDate": "2021-04-14T00:00:00",
+        "quantity": 1887,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-04-13T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-04-12T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-04-11T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-04-10T00:00:00",
+        "quantity": 0,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-09T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-04-08T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-04-07T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-04-06T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-04-05T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-04-04T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-04-03T00:00:00",
+        "quantity": 0,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-02T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-04-01T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-03-31T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-03-30T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-03-29T17:36:00",
+        "quantity": 1152,
+        "workingTime": 864
+      }
+    ]
+  },
+  {
+    "id": "32817f66-cbe2-bc5e-84f5-39fb32365ecd",
+    "planGroupId": "76d68f91-cb68-4cda-8843-044e8af76834",
+    "planGroupName": "Bangalore",
+    "planRowId": null,
+    "planRowName": null,
+    "processId": "60cc89eb-1e34-4db0-9fdc-2f3f4f3161f4",
+    "processName": "Sew",
+    "plannedPreProductionDate": "2021-04-12T00:00:00",
+    "firstProductionDate": "2021-03-28T00:00:00",
+    "lastProductionDate": "2021-05-13T00:00:00",
+    "expectedDeliveryDate": "2021-05-19T00:00:00",
+    "deliveryDate": "2021-05-27T00:00:00",
+    "workContentValue": 15,
+    "quantity": 100000,
+    "minutes": 1500000,
+    "orderName": "PO-120063",
+    "customer": "Walmart",
+    "orderReceivedDate": "2021-01-07T00:00:00",
+    "lineReference": "Line 14",
+    "style": "Style001",
+    "styleOption": "Option 2",
+    "styleColours": ["Blue"],
+    "productionTemplate": "Default",
+    "orderType": "Quick Response",
+    "orderTypeColour": "#486B34",
+    "orderStatus": "Confirmed",
+    "orderStatusColour": "#808080",
+    "destination": "Port",
+    "stripSchedule": [
+      {
+        "plannedDate": "2021-04-27T00:00:00",
+        "quantity": 2439.024390243904,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-28T00:00:00",
+        "quantity": 2439.0243902439033,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-29T00:00:00",
+        "quantity": 2439.024390243903,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-30T00:00:00",
+        "quantity": 2439.0243902439033,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-05-02T00:00:00",
+        "quantity": 2439.024390243904,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-05-03T00:00:00",
+        "quantity": 2439.0243902439033,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-05-04T00:00:00",
+        "quantity": 2439.0243902439033,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-05-05T00:00:00",
+        "quantity": 2439.024390243904,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-05-06T00:00:00",
+        "quantity": 2439.0243902439033,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-05-07T00:00:00",
+        "quantity": 2439.0243902439033,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-05-09T00:00:00",
+        "quantity": 2439.0243902439033,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-05-10T00:00:00",
+        "quantity": 2439.024390243903,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-05-11T00:00:00",
+        "quantity": 2439.024390243903,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-05-12T00:00:00",
+        "quantity": 2439.0243902439024,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-05-13T00:00:00",
+        "quantity": 2439.0243902439024,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-26T00:00:00",
+        "quantity": 2439.024390243904,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-25T00:00:00",
+        "quantity": 2439.024390243904,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-22T00:00:00",
+        "quantity": 2439.024390243904,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-02T00:00:00",
+        "quantity": 2439.0243902439047,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-04T00:00:00",
+        "quantity": 2439.0243902439042,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-05T00:00:00",
+        "quantity": 2439.0243902439042,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-06T00:00:00",
+        "quantity": 2439.0243902439042,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-07T00:00:00",
+        "quantity": 2439.0243902439042,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-08T00:00:00",
+        "quantity": 2439.024390243904,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-09T00:00:00",
+        "quantity": 2439.024390243904,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-11T00:00:00",
+        "quantity": 2439.024390243904,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-12T00:00:00",
+        "quantity": 2439.024390243904,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-13T00:00:00",
+        "quantity": 2439.024390243904,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-14T00:00:00",
+        "quantity": 2439.024390243904,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-15T00:00:00",
+        "quantity": 2439.024390243904,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-16T00:00:00",
+        "quantity": 2439.024390243904,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-18T00:00:00",
+        "quantity": 2439.024390243904,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-19T00:00:00",
+        "quantity": 2439.024390243904,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-20T00:00:00",
+        "quantity": 2439.024390243904,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-21T00:00:00",
+        "quantity": 2439.024390243904,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-01T00:00:00",
+        "quantity": 2439.0243902439042,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-04-23T00:00:00",
+        "quantity": 2439.024390243904,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-03-31T00:00:00",
+        "quantity": 2439.0243902439042,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-03-29T00:00:00",
+        "quantity": 2439.0243902439042,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-03-28T00:00:00",
+        "quantity": 2439.0243902439042,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-03-30T00:00:00",
+        "quantity": 2439.0243902439042,
+        "workingTime": 0
+      }
+    ]
+  },
+  {
+    "id": "115838e6-27eb-744c-726e-39fb5c2be26e",
+    "planGroupId": "76d68f91-cb68-4cda-8843-044e8af76834",
+    "planGroupName": "Bangalore",
+    "planRowId": "8403baff-9348-3213-6546-ff7756724565",
+    "planRowName": "BG Line 02",
+    "processId": "60cc89eb-1e34-4db0-9fdc-2f3f4f3161f4",
+    "processName": "Sew",
+    "plannedPreProductionDate": "2021-04-06T08:32:00",
+    "firstProductionDate": "2021-05-21T00:00:00",
+    "lastProductionDate": "2021-06-06T00:00:00",
+    "expectedDeliveryDate": "2021-06-12T00:00:00",
+    "deliveryDate": "2021-05-27T00:00:00",
+    "workContentValue": 15,
+    "quantity": 25000,
+    "minutes": 375000,
+    "orderName": "PO-120064",
+    "customer": "Walmart",
+    "orderReceivedDate": "2021-01-10T00:00:00",
+    "lineReference": "Line 13",
+    "style": "Style001",
+    "styleOption": "Option 1",
+    "styleColours": ["White"],
+    "productionTemplate": "Default",
+    "orderType": "In-Line Order",
+    "orderTypeColour": "#36802D",
+    "orderStatus": "Forecast",
+    "orderStatusColour": "#AD7521",
+    "destination": "Port",
+    "stripSchedule": [
+      {
+        "plannedDate": "2021-06-06T00:00:00",
+        "quantity": 1510,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-05-21T02:22:30",
+        "quantity": 450,
+        "workingTime": 337
+      },
+      {
+        "plannedDate": "2021-05-22T00:00:00",
+        "quantity": 0,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-05-23T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-05-24T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-06-05T00:00:00",
+        "quantity": 0,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-05-25T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-05-27T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-05-28T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-05-29T00:00:00",
+        "quantity": 0,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-05-30T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-05-31T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-06-01T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-06-03T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-06-04T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-05-26T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-06-02T00:00:00",
+        "quantity": 1920,
+        "workingTime": 1440
+      }
+    ]
+  },
+  {
+    "id": "785832d9-ec29-32a8-2419-39fb330f6dce",
+    "planGroupId": "76d68f91-cb68-4cda-8843-044e8af76834",
+    "planGroupName": "Bangalore",
+    "planRowId": null,
+    "planRowName": null,
+    "processId": "60cc89eb-1e34-4db0-9fdc-2f3f4f3161f4",
+    "processName": "Sew",
+    "plannedPreProductionDate": "2021-04-13T00:00:00",
+    "firstProductionDate": "2021-03-22T00:00:00",
+    "lastProductionDate": "2021-03-27T00:00:00",
+    "expectedDeliveryDate": "2021-04-02T00:00:00",
+    "deliveryDate": "2021-05-28T00:00:00",
+    "workContentValue": 15,
+    "quantity": 500,
+    "minutes": 7500,
+    "orderName": "PO-120068",
+    "customer": "H&M",
+    "orderReceivedDate": "2021-01-23T00:00:00",
+    "lineReference": "Line 682",
+    "style": "Style001",
+    "styleOption": "Option 2",
+    "styleColours": ["Blue"],
+    "productionTemplate": "Default",
+    "orderType": "Short Lead Time",
+    "orderTypeColour": "#3F9062",
+    "orderStatus": "Booking",
+    "orderStatusColour": "#20FF20",
+    "destination": "Port",
+    "stripSchedule": [
+      {
+        "plannedDate": "2021-03-22T00:00:00",
+        "quantity": 100,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-03-23T00:00:00",
+        "quantity": 100,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-03-24T00:00:00",
+        "quantity": 100,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-03-25T00:00:00",
+        "quantity": 100,
+        "workingTime": 0
+      },
+      {
+        "plannedDate": "2021-03-26T00:00:00",
+        "quantity": 100,
+        "workingTime": 0
+      }
+    ]
+  },
+  {
+    "id": "dcfea5ca-b4ab-a402-ba8c-39fb330f1176",
+    "planGroupId": "76d68f91-cb68-4cda-8843-044e8af76834",
+    "planGroupName": "Bangalore",
+    "planRowId": "8403baff-9348-3213-6546-ff7756724565",
+    "planRowName": "BG Line 02",
+    "processId": "60cc89eb-1e34-4db0-9fdc-2f3f4f3161f4",
+    "processName": "Sew",
+    "plannedPreProductionDate": "2021-04-13T00:00:00",
+    "firstProductionDate": "2021-06-07T00:00:00",
+    "lastProductionDate": "2021-06-08T00:00:00",
+    "expectedDeliveryDate": "2021-06-14T00:00:00",
+    "deliveryDate": "2021-05-28T00:00:00",
+    "workContentValue": 15,
+    "quantity": 500,
+    "minutes": 7500,
+    "orderName": "PO-120068",
+    "customer": "H&M",
+    "orderReceivedDate": "2021-01-23T00:00:00",
+    "lineReference": "Line 681",
+    "style": "Style001",
+    "styleOption": "Option 1",
+    "styleColours": ["White"],
+    "productionTemplate": "Default",
+    "orderType": "Short Lead Time",
+    "orderTypeColour": "#3F9062",
+    "orderStatus": "Booking",
+    "orderStatusColour": "#20FF20",
+    "destination": "Port",
+    "stripSchedule": [
+      {
+        "plannedDate": "2021-06-07T03:52:30",
+        "quantity": 330,
+        "workingTime": 247
+      },
+      {
+        "plannedDate": "2021-06-08T00:00:00",
+        "quantity": 170,
+        "workingTime": 1440
+      }
+    ]
+  },
+  {
+    "id": "fea4d049-aa06-dcb4-7683-39fb3310a1ff",
+    "planGroupId": "76d68f91-cb68-4cda-8843-044e8af76834",
+    "planGroupName": "Bangalore",
+    "planRowId": "15927ba5-160d-7db1-77aa-0157bd2ea72f",
+    "planRowName": "BG Line 01",
+    "processId": "60cc89eb-1e34-4db0-9fdc-2f3f4f3161f4",
+    "processName": "Sew",
+    "plannedPreProductionDate": "2021-03-24T03:15:00",
+    "firstProductionDate": "2021-03-28T00:00:00",
+    "lastProductionDate": "2021-03-29T00:00:00",
+    "expectedDeliveryDate": "2021-04-04T00:00:00",
+    "deliveryDate": "2021-05-29T00:00:00",
+    "workContentValue": 15,
+    "quantity": 500,
+    "minutes": 7500,
+    "orderName": "PO-120068",
+    "customer": "H&M",
+    "orderReceivedDate": "2021-01-23T00:00:00",
+    "lineReference": "Line 683",
+    "style": "Style001",
+    "styleOption": "Option 2",
+    "styleColours": ["Blue"],
+    "productionTemplate": "Default",
+    "orderType": "Short Lead Time",
+    "orderTypeColour": "#3F9062",
+    "orderStatus": "Booking",
+    "orderStatusColour": "#20FF20",
+    "destination": "Port",
+    "stripSchedule": [
+      {
+        "plannedDate": "2021-03-29T00:00:00",
+        "quantity": 120,
+        "workingTime": 1440
+      },
+      {
+        "plannedDate": "2021-03-28T03:15:00",
+        "quantity": 380,
+        "workingTime": 285
+      }
+    ]
+  },
+  {
+    "id": "fcaf0637-cc0a-50f8-515d-39fb323fef0e",
+    "planGroupId": "76d68f91-cb68-4cda-8843-044e8af76834",
+    "planGroupName": "Bangalore",
+    "planRowId": "15927ba5-160d-7db1-77aa-0157bd2ea72f",
+    "planRowName": "BG Line 01",
+    "processId": "60cc89eb-1e34-4db0-9fdc-2f3f4f3161f4",
+    "processName": "Sew",
+    "plannedPreProductionDate": "2021-03-24T09:30:00",
+    "firstProductionDate": "2021-03-29T00:00:00",
+    "lastProductionDate": "2021-03-29T00:00:00",
+    "expectedDeliveryDate": "2021-04-04T00:00:00",
+    "deliveryDate": "2021-05-29T00:00:00",
+    "workContentValue": 15,
+    "quantity": 500,
+    "minutes": 7500,
+    "orderName": "PO-120066",
+    "customer": "H&M",
+    "orderReceivedDate": "2021-01-21T00:00:00",
+    "lineReference": "Line 18",
+    "style": "Style001",
+    "styleOption": "Option 1",
+    "styleColours": ["White"],
+    "productionTemplate": "Default",
+    "orderType": "Quick Response",
+    "orderTypeColour": "#486B34",
+    "orderStatus": "Confirmed",
+    "orderStatusColour": "#808080",
+    "destination": "Port",
+    "stripSchedule": [
+      {
+        "plannedDate": "2021-03-29T09:30:00",
+        "quantity": 500,
+        "workingTime": 1350
+      }
+    ]
+  },
+  {
+    "id": "9b9f2b70-f4b4-7fe5-884b-39fb32431a11",
+    "planGroupId": "76d68f91-cb68-4cda-8843-044e8af76834",
+    "planGroupName": "Bangalore",
+    "planRowId": "8403baff-9348-3213-6546-ff7756724565",
+    "planRowName": "BG Line 02",
+    "processId": "60cc89eb-1e34-4db0-9fdc-2f3f4f3161f4",
+    "processName": "Sew",
+    "plannedPreProductionDate": "2021-04-15T00:00:00",
+    "firstProductionDate": "2021-06-06T00:00:00",
+    "lastProductionDate": "2021-06-07T00:00:00",
+    "expectedDeliveryDate": "2021-06-13T00:00:00",
+    "deliveryDate": "2021-05-30T00:00:00",
+    "workContentValue": 15,
+    "quantity": 2000,
+    "minutes": 30000,
+    "orderName": "PO-120067",
+    "customer": "Benetton",
+    "orderReceivedDate": "2021-01-22T00:00:00",
+    "lineReference": "Line 19",
+    "style": "Style001",
+    "styleOption": "Option 2",
+    "styleColours": ["Blue"],
+    "productionTemplate": "Default",
+    "orderType": "Short Lead Time",
+    "orderTypeColour": "#3F9062",
+    "orderStatus": "Forecast",
+    "orderStatusColour": "#AD7521",
+    "destination": "Port",
+    "stripSchedule": [
+      {
+        "plannedDate": "2021-06-06T02:52:30",
+        "quantity": 410,
+        "workingTime": 307
+      },
+      {
+        "plannedDate": "2021-06-07T00:00:00",
+        "quantity": 1590,
+        "workingTime": 1440
+      }
+    ]
+  }
+]

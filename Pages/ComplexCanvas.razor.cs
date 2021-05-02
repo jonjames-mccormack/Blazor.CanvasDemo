@@ -6,9 +6,9 @@ namespace Blazor.CanvasDemo.Pages
 {
     public partial class ComplexCanvas
     {
-        protected DateTime StartDate => new DateTime(2021, 1, 24);
-        protected DateTime EndDate => new DateTime(2021, 4, 10);
-        protected DateTime TodaysDate => new DateTime(2021, 2, 17);
+        protected DateTime StartDate => new DateTime(2021, 2, 27);
+        protected DateTime EndDate => new DateTime(2021, 6, 14);
+        protected DateTime TodaysDate => new DateTime(2021, 3, 13);
         protected Timeline timeline;
         protected Orders orders;
 

@@ -124,7 +124,7 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
             await _context.StrokeAsync();
 
             var dateToDraw = StartDate;
-            var drawingStartPosition = _panelWidth + 7;
+            var drawingStartPosition = _panelWidth;
 
             // First we loop and draw Background for day
             while (drawingStartPosition < _width && dateToDraw <= EndDate) 
@@ -137,7 +137,7 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
 
             // Reset boundary variables
             dateToDraw = StartDate;
-            drawingStartPosition = _panelWidth + 7;
+            drawingStartPosition = _panelWidth;
 
             // Second loop - draw boxes and text
             while (drawingStartPosition < _width && dateToDraw <= EndDate) 

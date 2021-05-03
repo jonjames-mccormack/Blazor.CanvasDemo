@@ -1,3 +1,7 @@
 @inject HttpClient Http
 
-<BECanvas @ref="ordersCanvas"  Height="600" Width="1200"/>
+<BECanvas @ref="ordersCanvas" Height="600" Width="1200" />
+
+<p>Time to render Order canvas was: @frameTimeInMilliseconds</p>
+
+<button class="btn btn-primary" @onclick="RenderOrders">Redraw</button>

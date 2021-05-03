@@ -4,4 +4,12 @@
 
 <p>Getting started with BlazorExtensions.Canvas <a href="https://github.com/BlazorExtensions/Canvas#readme">here</a></p>
 
-<BECanvas Width="300" Height="400" @ref="_canvasReference" ></BECanvas>
+<p>
+    Using the simple setup tutorial found in the extension read.me we can establish a great performance frame of reference before exploring an enterprise use case.
+</p>
+
+<BECanvas Width="300" Height="400" @ref="_canvasReference"></BECanvas>
+
+<p>Time to render Order canvas was: @(frameTimeInMilliseconds)ms</p>
+
+<button class="btn btn-primary" @onclick="RenderHelloBlazorAsync">Redraw</button>

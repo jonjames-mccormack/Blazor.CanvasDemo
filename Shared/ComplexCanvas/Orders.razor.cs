@@ -46,11 +46,6 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
 
         private async Task DrawRowDeliveryDateAsync(Order order, int rowTop)
         {
-            if (order.DeliveryDate == null) 
-            {
-                return;
-            }
-            
             await _context.BeginPathAsync();
 
             var deliveryDateHorizontalOffset = _dayWidth * (order.DeliveryDate - StartDate).TotalDays;
@@ -103,7 +98,7 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
             await _context.MoveToAsync(0, rowTop + _orderHeight + 0.5);
             await _context.LineToAsync(_width, rowTop + _orderHeight + 0.5);
             await _context.StrokeAsync();
-            await _context.SetLineDashAsync(new float[0]);
+            await _context.SetLineDashAsync(Array.Empty<float>());
 
             // Draw a line to seaparate the panel from the row         
             await _context.SetStrokeStyleAsync("#CCCCCC");
@@ -165,9 +160,7 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
 
         private async Task<int> DrawRowOrderTextAsync(string text, int rowTop, int startPosition, int extraWidth)
         {
-            text = text == null 
-                ? "" 
-                : text;
+            text ??= "";
             
             await _context.BeginPathAsync();
             await _context.SetFontAsync("11px Arial");
@@ -177,8 +170,7 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
             var measuredWidth = await _context.MeasureTextAsync(text);
             while (measuredWidth.Width > 65 + extraWidth) 
             {
-                // This is terrible, use a clipping region instead
-                text = text.Substring(0, text.Length - 1);
+                text = text[0..^1];
                 measuredWidth = await _context.MeasureTextAsync(text);
             }
 
@@ -211,12 +203,15 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
         private async Task DrawRowAsync(Order order, int offset)
         {
             var rowTop = _orderHeight * offset;
-            var orderFillColour = 
-                order.ExpectedDeliveryDate > order.DeliveryDate 
-                    ? "#00FFFF"
-                    : order.PlannedPreProductionDate > TodaysDate
-                        ? "#cc3d55"
-                        : "#C0C0C0";
+            var orderFillColour = "#C0C0C0";
+            if (order.ExpectedDeliveryDate > order.DeliveryDate)
+            {
+                orderFillColour = "#00FFFF";
+            }
+            else if (order.PlannedPreProductionDate > TodaysDate)
+            {
+                orderFillColour = "#cc3d55";
+            }
             var orderBorderColour = "#000000";
             
             // Draw an aqua background to signify the region that is before today
@@ -233,6 +228,11 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
+            if (orders == null)
+            {
+                return;
+            }
+
             _width = (int)ordersCanvas.Width;
             _height = (int)ordersCanvas.Height;
             _panelWidth = 220;

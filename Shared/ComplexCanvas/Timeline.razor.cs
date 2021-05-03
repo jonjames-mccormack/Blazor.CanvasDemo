@@ -94,7 +94,7 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
 
 
             await _context.SetStrokeStyleAsync("#CCCCCC");
-            await _context.MoveToAsync(drawHorizontalPosition + 0.5, _height / 2);
+            await _context.MoveToAsync(drawHorizontalPosition + 0.5, _height / (double)2);
             await _context.LineToAsync(drawHorizontalPosition + 0.5, _height);
             await _context.StrokeAsync();
         }

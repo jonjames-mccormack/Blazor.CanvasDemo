@@ -38,18 +38,12 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
 
         private async Task DrawRowBackgroundAsync(int rowTop)
         {
-            await _context.BeginPathAsync();
-
             await _context.SetFillStyleAsync("#CCFFFF");
             await _context.FillRectAsync(_panelWidth, rowTop + 1, _dayWidth * (TodaysDate - StartDate).TotalDays, _orderHeight);
-
-            await _context.ClosePathAsync();
         }
 
         private async Task DrawRowDeliveryDateAsync(Order order, int rowTop)
         {
-            await _context.BeginPathAsync();
-
             var deliveryDateHorizontalOffset = _dayWidth * (order.DeliveryDate - StartDate).TotalDays;
             if (deliveryDateHorizontalOffset < 0) 
             {
@@ -58,8 +52,6 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
 
             await _context.SetFillStyleAsync("#CCFFFF");
             await _context.FillRectAsync(_panelWidth + deliveryDateHorizontalOffset, rowTop + 1, _width, _orderHeight);
-
-            await _context.ClosePathAsync();
         }
 
         private async Task DrawOrderAsync(Order order, int rowTop, string orderFillColour, string orderBorderColour)
@@ -71,24 +63,18 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
             var deliveryHorizontalOffset = _dayWidth * (order.ExpectedDeliveryDate - StartDate).TotalDays;
 
             // Draw PREPRODUCTION TAIL (Connects to FirstProductDate)
-            await _context.BeginPathAsync();
             await _context.SetFillStyleAsync("#008000");
-            await _context.FillRectAsync(_panelWidth + preProdHorizontalOffset, rowTop + 5, startHorizontalOffset - preProdHorizontalOffset, 3);                
-            await _context.ClosePathAsync();
+            await _context.FillRectAsync(_panelWidth + preProdHorizontalOffset, rowTop + 5, startHorizontalOffset - preProdHorizontalOffset, 3); 
 
             // Draw DELIVERY HEAD (Connected to LastProductionDate)
-            await _context.BeginPathAsync();
             await _context.SetFillStyleAsync("#800080");
-            await _context.FillRectAsync(_panelWidth + targetHorizontalOffset, rowTop + 5, deliveryHorizontalOffset - targetHorizontalOffset, 3);                
-            await _context.ClosePathAsync();
+            await _context.FillRectAsync(_panelWidth + targetHorizontalOffset, rowTop + 5, deliveryHorizontalOffset - targetHorizontalOffset, 3);
             
             // Draw ORDER STRIP (FirstProductionDate to LastProductionDate)
-            await _context.BeginPathAsync();
             await _context.SetFillStyleAsync(orderFillColour);
             await _context.FillRectAsync(_panelWidth + startHorizontalOffset + 0.5, rowTop + 1.5, targetHorizontalOffset - startHorizontalOffset + _dayWidth, 10);
             await _context.SetStrokeStyleAsync(orderBorderColour);
             await _context.StrokeRectAsync(_panelWidth + startHorizontalOffset + 0.5, rowTop + 1.5, targetHorizontalOffset - startHorizontalOffset + _dayWidth, 10);
-            await _context.ClosePathAsync();
         }
 
         private async Task DrawRowDetailAndTextAsync(Order order, int rowTop, string orderFillColour, string orderBorderColour)
@@ -110,12 +96,9 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
             await _context.StrokeAsync();
 
             // Clear the panel area of any overrun drawings so we can write the row info
-            await _context.BeginPathAsync();
             await _context.ClearRectAsync(0, rowTop + 1, _panelWidth, _orderHeight - 1);
-            await _context.ClosePathAsync();
 
             // Draw Order Line text
-            await _context.BeginPathAsync();
             await _context.SetFontAsync("bold 11px Arial");
             await _context.SetFillStyleAsync("#454545");
             await _context.FillTextAsync(order.OrderName + " / " + order.LineReference, 18, rowTop + 13);
@@ -123,29 +106,23 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
             // Draw Order Type Swatch
             if (!string.IsNullOrWhiteSpace(order.OrderTypeColour))
             {
-                await _context.BeginPathAsync();
                 await _context.SetFillStyleAsync(order.OrderTypeColour);
                 await _context.FillRectAsync(6, rowTop + 21, 8, 8);
-                await _context.BeginPathAsync();
                 await _context.SetStrokeStyleAsync(orderBorderColour);
                 await _context.StrokeRectAsync(6.5, rowTop + 21 + 0.5, 7, 7);
             }
 
             // Draw Order Strip Status Swatch
-            await _context.BeginPathAsync();
             await _context.SetFillStyleAsync(orderFillColour);
             await _context.FillRectAsync(_panelWidth - 16, rowTop + 5, 8, 26);
-            await _context.BeginPathAsync();
             await _context.SetStrokeStyleAsync(orderBorderColour);
             await _context.StrokeRectAsync(_panelWidth - 15.5, rowTop + 5 + 0.5, 7, 25);
 
             // Draw Order Status Swatch
             if (!string.IsNullOrWhiteSpace(order.OrderStatusColour))
             {
-                await _context.BeginPathAsync();
                 await _context.SetFillStyleAsync(order.OrderStatusColour);
                 await _context.FillRectAsync(6, rowTop + 5, 8, 8);
-                await _context.BeginPathAsync();
                 await _context.SetStrokeStyleAsync(orderBorderColour);
                 await _context.StrokeRectAsync(6.5, rowTop + 5 + 0.5, 7, 7);
             }
@@ -154,7 +131,6 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
             var orderSubtitleText = string.IsNullOrWhiteSpace(order.OrderType)
                 ? order.OrderStatus
                 : order.OrderType + " / " + order.OrderStatus;
-            await _context.BeginPathAsync();
             await _context.SetFontAsync("11px Arial");
             await _context.SetFillStyleAsync("#454545");
             await _context.FillTextAsync(orderSubtitleText, 18, rowTop + 29);
@@ -164,7 +140,6 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
         {
             text ??= "";
             
-            await _context.BeginPathAsync();
             await _context.SetFontAsync("11px Arial");
             await _context.SetFillStyleAsync("#454545");
 
@@ -177,7 +152,6 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
             }
 
             await _context.FillTextAsync(text, textPosition, rowTop + _orderHeight - 4);
-            await _context.ClosePathAsync();
 
             return startPosition + 90 + extraWidth;
         }

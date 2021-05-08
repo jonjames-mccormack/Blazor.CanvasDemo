@@ -1,11 +1,12 @@
 using Blazor.Extensions;
 using Blazor.Extensions.Canvas.Canvas2D;
+using Microsoft.AspNetCore.Components;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace Blazor.CanvasDemo.Pages
 {
-    public partial class CanvasTutorial
+    public partial class CanvasTutorial : ComponentBase
     {
         private Canvas2DContext _context;
 

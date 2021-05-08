@@ -3,12 +3,13 @@ using Blazor.Extensions.Canvas.Canvas2D;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Diagnostics;
+using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 
 namespace Blazor.CanvasDemo.Shared.ComplexCanvas
 {
-    public partial class Orders
+    public partial class Orders : ComponentBase
     {
         [Parameter]
         public DateTime StartDate { get; set; }
@@ -18,6 +19,9 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
 
         [Parameter]
         public DateTime TodaysDate { get; set; }
+
+        [Inject]
+        protected HttpClient Http { get; set; }
 
         private Canvas2DContext _context;
         private int _width;
@@ -45,7 +49,7 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
         private async Task DrawRowDeliveryDateAsync(Order order, int rowTop)
         {
             var deliveryDateHorizontalOffset = _dayWidth * (order.DeliveryDate - StartDate).TotalDays;
-            if (deliveryDateHorizontalOffset < 0) 
+            if (deliveryDateHorizontalOffset < 0)
             {
                 deliveryDateHorizontalOffset = 0;
             }
@@ -64,12 +68,12 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
 
             // Draw PREPRODUCTION TAIL (Connects to FirstProductDate)
             await _context.SetFillStyleAsync("#008000");
-            await _context.FillRectAsync(_panelWidth + preProdHorizontalOffset, rowTop + 5, startHorizontalOffset - preProdHorizontalOffset, 3); 
+            await _context.FillRectAsync(_panelWidth + preProdHorizontalOffset, rowTop + 5, startHorizontalOffset - preProdHorizontalOffset, 3);
 
             // Draw DELIVERY HEAD (Connected to LastProductionDate)
             await _context.SetFillStyleAsync("#800080");
             await _context.FillRectAsync(_panelWidth + targetHorizontalOffset, rowTop + 5, deliveryHorizontalOffset - targetHorizontalOffset, 3);
-            
+
             // Draw ORDER STRIP (FirstProductionDate to LastProductionDate)
             await _context.SetFillStyleAsync(orderFillColour);
             await _context.FillRectAsync(_panelWidth + startHorizontalOffset + 0.5, rowTop + 1.5, targetHorizontalOffset - startHorizontalOffset + _dayWidth, 10);
@@ -81,7 +85,7 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
         {
             // Draw dashed line on the bottom of the row
             await _context.BeginPathAsync();
-            await _context.SetLineDashAsync(new float[] {3, 3});
+            await _context.SetLineDashAsync(new float[] { 3, 3 });
             await _context.SetStrokeStyleAsync("#C0C0C0");
             await _context.MoveToAsync(0, rowTop + _orderHeight + 0.5);
             await _context.LineToAsync(_width, rowTop + _orderHeight + 0.5);
@@ -139,13 +143,13 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
         private async Task<int> DrawRowOrderTextAsync(string text, int rowTop, int startPosition, int extraWidth)
         {
             text ??= "";
-            
+
             await _context.SetFontAsync("11px Arial");
             await _context.SetFillStyleAsync("#454545");
 
             var textPosition = 5 + startPosition + _panelWidth;
             var measuredWidth = await _context.MeasureTextAsync(text);
-            while (measuredWidth.Width > 65 + extraWidth) 
+            while (measuredWidth.Width > 65 + extraWidth)
             {
                 text = text[0..^1];
                 measuredWidth = await _context.MeasureTextAsync(text);
@@ -189,7 +193,7 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
                 orderFillColour = "#cc3d55";
             }
             var orderBorderColour = "#000000";
-            
+
             // Draw an aqua background to signify the region that is before today
             await DrawRowBackgroundAsync(rowTop);
             // Draw an aqua background to signify the region that is after the delivery date

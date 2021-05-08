@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Blazor.CanvasDemo.Shared.ComplexCanvas
 {
-    public partial class Timeline
+    public partial class Timeline : ComponentBase
     {
         [Parameter]
         public DateTime StartDate { get; set; }
-        
+
         [Parameter]
         public DateTime EndDate { get; set; }
-        
+
         [Parameter]
         public DateTime TodaysDate { get; set; }
 
@@ -35,7 +35,7 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
         private async Task DrawWeekHeaderAsync(DateTime day, int drawHorizontalPosition, bool firstRow)
         {
             //If this is the 1st of the Week
-            if (day.DayOfWeek == DayOfWeek.Monday) 
+            if (day.DayOfWeek == DayOfWeek.Monday)
             {
                 var weekText = day.ToShortDateString();
                 var weekTextWidth = (await _context.MeasureTextAsync(weekText)).Width;
@@ -57,11 +57,11 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
             }
         }
 
-        private async Task DrawDayHeaderAsync(DateTime day, int drawHorizontalPosition) 
+        private async Task DrawDayHeaderAsync(DateTime day, int drawHorizontalPosition)
         {
             //Draw the day letter on the bottom half
             var dayText = "";
-            switch (day.DayOfWeek) 
+            switch (day.DayOfWeek)
             {
                 case DayOfWeek.Saturday:
                 case DayOfWeek.Sunday:
@@ -86,7 +86,7 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
 
             await _context.SetFontAsync("11px Arial");
             await _context.SetFillStyleAsync("#454545");
-            
+
             var dayTextWidth = (await _context.MeasureTextAsync(dayText)).Width;
             var dayTextX = _dayWidth / 2 - dayTextWidth / 2 + drawHorizontalPosition;
             var dayTextY = _height - 3;
@@ -127,7 +127,7 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
             var drawingStartPosition = _panelWidth;
 
             // First we loop and draw Background for day
-            while (drawingStartPosition < _width && dateToDraw <= EndDate) 
+            while (drawingStartPosition < _width && dateToDraw <= EndDate)
             {
                 await DrawDayBackgroundAsync(dateToDraw, drawingStartPosition);
 
@@ -140,13 +140,13 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
             drawingStartPosition = _panelWidth;
 
             // Second loop - draw boxes and text
-            while (drawingStartPosition < _width && dateToDraw <= EndDate) 
+            while (drawingStartPosition < _width && dateToDraw <= EndDate)
             {
                 // [   WEEK   ]
                 // [D][D][D][D]
                 await DrawWeekHeaderAsync(dateToDraw, drawingStartPosition, true);
                 await DrawDayHeaderAsync(dateToDraw, drawingStartPosition);
-                
+
                 dateToDraw = dateToDraw.AddDays(1);
                 drawingStartPosition += _dayWidth;
             }

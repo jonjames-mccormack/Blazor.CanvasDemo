@@ -1,0 +1,13 @@
+﻿@using Blazor.CanvasDemo.Shared.ComplexCanvas
+@inherits Orders
+
+@{
+	base.BuildRenderTree(__builder);
+}
+
+<label class="ml-2">Render Batch mode</label>
+<select @bind="CurrentBatchMode">
+	<option value="@BatchMode.MethodBatch">Per Method</option>
+	<option value="@BatchMode.RenderBatch">All Render</option>
+	<option value="@BatchMode.NoBatch">No Batching</option>
+</select>

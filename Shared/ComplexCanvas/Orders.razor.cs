@@ -23,30 +23,34 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
         [Inject]
         protected HttpClient Http { get; set; }
 
-        private Canvas2DContext _context;
+        protected Canvas2DContext _context;
         private int _width;
         private int _height;
         private int _panelWidth;
         private int _dayWidth;
         private int _orderHeight;
         private Order[] _orders;
+        private Stopwatch _stopwatch;
 
         protected BECanvasComponent ordersCanvas;
         protected int frameTimeInMilliseconds;
 
         protected override async Task OnInitializedAsync()
         {
+            _stopwatch = new Stopwatch();
             _orders = await Http.GetFromJsonAsync<Order[]>("sample-data/orders.json");
+            _context = await ordersCanvas.CreateCanvas2DAsync();
+
             await RenderOrders();
         }
 
-        private async Task DrawRowBackgroundAsync(int rowTop)
+        protected virtual async Task DrawRowBackgroundAsync(int rowTop)
         {
             await _context.SetFillStyleAsync("#CCFFFF");
             await _context.FillRectAsync(_panelWidth, rowTop + 1, _dayWidth * (TodaysDate - StartDate).TotalDays, _orderHeight);
         }
 
-        private async Task DrawRowDeliveryDateAsync(Order order, int rowTop)
+        protected virtual async Task DrawRowDeliveryDateAsync(Order order, int rowTop)
         {
             var deliveryDateHorizontalOffset = _dayWidth * (order.DeliveryDate - StartDate).TotalDays;
             if (deliveryDateHorizontalOffset < 0)
@@ -58,7 +62,7 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
             await _context.FillRectAsync(_panelWidth + deliveryDateHorizontalOffset, rowTop + 1, _width, _orderHeight);
         }
 
-        private async Task DrawOrderAsync(Order order, int rowTop, string orderFillColour, string orderBorderColour)
+        protected virtual async Task DrawOrderAsync(Order order, int rowTop, string orderFillColour, string orderBorderColour)
         {
             // Calculate the start/end positions on the row, and the difference to figure the width
             var startHorizontalOffset = _dayWidth * (order.FirstProductionDate - StartDate).TotalDays;
@@ -81,7 +85,7 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
             await _context.StrokeRectAsync(_panelWidth + startHorizontalOffset + 0.5, rowTop + 1.5, targetHorizontalOffset - startHorizontalOffset + _dayWidth, 10);
         }
 
-        private async Task DrawRowDetailAndTextAsync(Order order, int rowTop, string orderFillColour, string orderBorderColour)
+        protected virtual async Task DrawRowDetailAndTextAsync(Order order, int rowTop, string orderFillColour, string orderBorderColour)
         {
             // Draw dashed line on the bottom of the row
             await _context.BeginPathAsync();
@@ -140,7 +144,7 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
             await _context.FillTextAsync(orderSubtitleText, 18, rowTop + 29);
         }
 
-        private async Task<int> DrawRowOrderTextAsync(string text, int rowTop, int startPosition, int extraWidth)
+        protected virtual async Task<int> DrawRowOrderTextAsync(string text, int rowTop, int startPosition, int extraWidth)
         {
             text ??= "";
 
@@ -160,7 +164,7 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
             return startPosition + 90 + extraWidth;
         }
 
-        private async Task DrawRowTextAsync(Order order, int rowTop)
+        protected virtual async Task DrawRowTextAsync(Order order, int rowTop)
         {
             var startPosition = 0;
             startPosition = await DrawRowOrderTextAsync("", rowTop, startPosition, -50);
@@ -180,7 +184,7 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
             await DrawRowOrderTextAsync(order.PlanRowName, rowTop, startPosition, 0);
         }
 
-        private async Task DrawRowAsync(Order order, int offset)
+        protected virtual async Task DrawRowAsync(Order order, int offset)
         {
             var rowTop = _orderHeight * offset;
             var orderFillColour = "#C0C0C0";
@@ -206,22 +210,21 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
             await DrawRowTextAsync(order, rowTop);
         }
 
-        protected async Task RenderOrders()
+        protected virtual async Task RenderOrders()
         {
             if (_orders == null || _orders.Length == 0)
             {
                 return;
             }
 
-            var frameTimeStopwatch = new Stopwatch();
-            frameTimeStopwatch.Start();
+            _stopwatch.Reset();
+            _stopwatch.Start();
 
             _width = (int)ordersCanvas.Width;
             _height = (int)ordersCanvas.Height;
             _panelWidth = 220;
             _dayWidth = 12;
             _orderHeight = 36;
-            _context = await ordersCanvas.CreateCanvas2DAsync();
 
             await _context.ClearRectAsync(0, 0, _width, _height);
 
@@ -230,8 +233,8 @@ namespace Blazor.CanvasDemo.Shared.ComplexCanvas
                 await DrawRowAsync(_orders[i], i);
             }
 
-            frameTimeStopwatch.Stop();
-            frameTimeInMilliseconds = (int)frameTimeStopwatch.ElapsedMilliseconds;
+            _stopwatch.Stop();
+            frameTimeInMilliseconds = (int)_stopwatch.ElapsedMilliseconds;
         }
     }
 }
